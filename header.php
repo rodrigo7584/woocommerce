@@ -22,17 +22,34 @@
       $logo_image ='<h1>' . get_bloginfo('name') . '</h1>';
   }
   ?>
-  <?php 
-    `<form action='`bloginfo('url')`/loja/' method='get'>
-    </form>` 
+
+  <?php
+    $cart_count =  WC()->cart->get_cart_contents_count();
+    if($cart_count){
+      $cart_items_count = $cart_count;
+    }else{
+      $cart_items_count = 0;
+    };
   ?>
-
-
   <header class="header">
     <a href="/">
       <?php echo $logo_image; ?>
     </a>
     <div class="search">
-      <?php get_product_search_form();?>
+      <form action="<?php bloginfo('url')?>/loja/" method="get">
+        <input type="text" name="s" id="s" placeholder="Buscar produtos" value="<?php the_search_query();?>">
+        <input type="text" name="post_type" value="product" class="hidden"/>
+        <input type="submit" id="searchbutton" value="Buscar">
+      </form>
     </div>
+    <nav class="conta">
+      <a href="/minha-conta" class="minha-conta">
+        Minha Conta
+      </a>
+      <a href="/carrinho" class="carrinho">
+        <span>
+          <?php echo $cart_items_count;?>
+        </span>
+      </a>
+    </nav>
   </header>
