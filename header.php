@@ -31,25 +31,42 @@
       $cart_items_count = 0;
     };
   ?>
+  <section class="header-top">
+    <div class="container">
+      <div class="row">
+          <a href="#" class="header-top-link">ofertas no whatsapp</a>
+          <a href="#" class="header-top-link">atendimento</a>
+      </div>
+    </div>       
+  </section>
   <header class="header">
-    <a href="/">
-      <?php echo $logo_image; ?>
-    </a>
-    <div class="search">
-      <form action="<?php bloginfo('url')?>/loja/" method="get">
-        <input type="text" name="s" id="s" placeholder="Buscar produtos" value="<?php the_search_query();?>">
-        <input type="text" name="post_type" value="product" class="hidden"/>
-        <input type="submit" id="searchbutton" value="Buscar">
-      </form>
+    <div class="container">
+      <div class="row">
+        <a class="header-logo" href="/">
+          <?php echo $logo_image; ?>
+        </a>
+        <div class="search">
+          <form action="<?php bloginfo('url')?>/loja/" method="get">
+            <input type="text" name="s" id="s" placeholder="Buscar produtos" value="<?php the_search_query();?>">
+            <input type="text" name="post_type" value="product" class="hidden"/>
+            <button type="submit" id="searchbutton" >
+              <img src="<?php echo get_template_directory_uri()?>/img/magnifying-glass-solid.svg" alt="Buscar">
+            </button>
+          </form>
+        </div>
+        <nav class="conta">
+          <a href="/minha-conta" class="minha-conta">
+            Minha Conta
+          </a>
+          <a href="/carrinho" class="carrinho">
+            Carrinho
+            <span>
+              <?php echo $cart_items_count;?>
+            </span>
+          </a>
+        </nav>
+      </div>
     </div>
-    <nav class="conta">
-      <a href="/minha-conta" class="minha-conta">
-        Minha Conta
-      </a>
-      <a href="/carrinho" class="carrinho">
-        <span>
-          <?php echo $cart_items_count;?>
-        </span>
-      </a>
-    </nav>
+
+ 
   </header>
