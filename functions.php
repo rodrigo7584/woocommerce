@@ -26,3 +26,20 @@ function cojiba_theme_suports() {
   ));
 }
 add_action('after_setup_theme', 'cojiba_theme_suports');
+
+register_nav_menus(
+  array(
+    'cojiba_categorias'=> 'Menu de categorias'
+  )
+);
+
+
+// function lokal_seguros_config(){
+//   register_nav_menus(
+//   array(
+//     'lokal_seguros_main_menu' => 'Menu Topo'
+//     )
+//   );
+//   add_theme_support('post-thumbnails');
+// }
+// add_action('after_setup_theme','lokal_seguros_config',0);

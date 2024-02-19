@@ -131,7 +131,7 @@ a {
   display: block;
   text-decoration: none;
 }
-button{
+button {
   border: none;
   background: transparent;
 }
@@ -139,7 +139,7 @@ ul {
   list-style: none;
 }
 * {
-  box-sizing: border-box !important;  
+  box-sizing: border-box !important;
 }
 /* 
 END BROWSER RESET 
@@ -148,23 +148,29 @@ END BROWSER RESET
   font-size: 62.5%;
   scroll-behavior: smooth;
 
-  --gray-100: #DBDBDB;
+  --white: #ffffff;
+  --gray-100: #dbdbdb;
   --gray-200: #939393;
   --gray-300: #707070;
-  --red-medium: #ED1C24;
-  --blue-medium: #2F3292;
+  --red-300: #ed1921;
+  --blue-200: #2f3292;
+  --blue-300: #000379;
 
-  --svg-gray-100: brightness(0) saturate(100%) invert(99%) sepia(1%) saturate(1257%) hue-rotate(231deg) brightness(106%) contrast(72%);
-  --svg-gray-200: brightness(0) saturate(100%) invert(70%) sepia(3%) saturate(1%) hue-rotate(314deg) brightness(85%) contrast(79%);
+  --svg-gray-100: brightness(0) saturate(100%) invert(99%) sepia(1%) saturate(1257%)
+    hue-rotate(231deg) brightness(106%) contrast(72%);
+  --svg-gray-200: brightness(0) saturate(100%) invert(70%) sepia(3%) saturate(1%) hue-rotate(314deg)
+    brightness(85%) contrast(79%);
+  --svg-blue-300: brightness(0) saturate(100%) invert(10%) sepia(96%) saturate(7429%)
+    hue-rotate(244deg) brightness(48%) contrast(120%);
 
   --light: 300;
   --regular: 400;
   --medium: 500;
   --semibold: 600;
   --bold: 700;
-  --extrabold:800;
+  --extrabold: 800;
 }
-body{
+body {
   font-family: 'Open sans', sans-serif;
 }
 .container {
@@ -176,13 +182,13 @@ body{
 .container-fluid {
   max-width: 100%;
 }
-.hidden{
+.hidden {
   display: none;
 }
 input,
 p,
 button,
-span{
+span {
   color: var(--gray-300);
 }
 
@@ -216,13 +222,13 @@ span{
 .header-top {
   border-bottom: 0.1rem solid var(--gray-100);
 }
-.header-top .row{
+.header-top .row {
   display: flex;
   justify-content: flex-end;
   gap: 0.8rem;
   padding: 1rem 0;
 }
-.header-top  .header-top-link{
+.header-top .header-top-link {
   display: flex;
   align-items: center;
   text-transform: uppercase;
@@ -230,46 +236,47 @@ span{
   color: var(--gray-200);
   gap: 0.8rem;
 }
-.header-top .header-top-link:not(:last-child)::after{
+.header-top .header-top-link:not(:last-child)::after {
   content: '';
   display: inline-flex;
   width: 0.1rem;
   height: 100%;
   background: var(--gray-200);
 }
-.header{
+.header {
   padding: 1.5rem 0;
 }
-.header .row{
+.header .row {
   display: flex;
-  justify-content: space-between
+  justify-content: space-between;
+  gap: 1rem;
 }
 .header .header-logo {
   font-size: 3rem;
   font-weight: var(--bold);
   text-transform: uppercase;
-  color: var(--red-medium);
+  color: var(--red-300);
 }
-.header .search{
+.header .search {
   position: relative;
 }
-.header .search input{
+.header .search input {
   border: none;
-  background: none; 
+  background: none;
   height: 100%;
 }
-.header .search #s{ 
+.header .search #s {
   border: 0.1rem solid var(--gray-100);
   border-radius: 0.3rem;
   font-size: 1.5rem;
   padding: 1rem 4rem 1rem 1rem;
   width: 350px;
 }
-.header .search #s::placeholder{
+.header .search #s::placeholder {
   color: var(--gray-200);
-} 
+}
 
-.header .search #searchbutton{
+.header .search #searchbutton {
   position: absolute;
   right: 0;
   top: 0;
@@ -284,26 +291,48 @@ span{
   align-items: center;
   filter: var(--svg-gray-200);
 }
-.header .search #searchbutton img{
+.header .search #searchbutton img {
   max-width: 100%;
 }
-.header .search #searchbutton:hover{
+.header .search #searchbutton:hover {
   transform: scale(0.9);
   cursor: pointer;
 }
-.header .nav{
+.header .nav {
   display: flex;
   gap: 2rem;
 }
-.header .nav .nav-item{
+.header .nav .nav-item {
   display: flex;
   align-items: center;
   gap: 0.5rem;
   color: var(--gray-300);
   font-weight: var(--medium);
   font-size: 1.5rem;
+  color: var(--blue-300);
 }
-.header .nav .nav-item img{
+.header .nav .nav-item img {
   height: 2.3rem;
+  filter: var(--svg-blue-300);
+}
+.header .nav .carrinho {
+  position: relative;
+}
+.header .nav .carrinho span {
+  background-color: var(--red-300);
+  height: 2rem;
+  min-width: 2rem;
+  border-radius: 100%;
+  padding: 0.3rem;
+  display: flex;
+  font-weight: var(--bold);
+  color: var(--white);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 1rem;
+  position: absolute;
+  top: 0;
+  right: -1rem;
 }
 @import url('./css/header.css');
