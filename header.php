@@ -54,12 +54,13 @@
             </button>
           </form>
         </div>
-        <nav class="conta">
-          <a href="/minha-conta" class="minha-conta">
+        <nav class="nav">
+          <a href="/minha-conta" class="nav-item minha-conta">
+            <img src="<?php echo get_template_directory_uri()?>/img/user-solid.svg" alt="Buscar">
             Minha Conta
           </a>
-          <a href="/carrinho" class="carrinho">
-            Carrinho
+          <a href="/carrinho" class="nav-item carrinho">
+            <img src="<?php echo get_template_directory_uri()?>/img/cart-shopping-solid.svg" alt="Buscar">
             <span>
               <?php echo $cart_items_count;?>
             </span>

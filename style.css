@@ -276,7 +276,6 @@ span{
   border-radius: 0.3rem;
   border: none;
   background-color: none;
-  height: 100%;
   width: 4rem;
   transition: 0.2s;
   padding: 0.9rem;
@@ -291,5 +290,20 @@ span{
 .header .search #searchbutton:hover{
   transform: scale(0.9);
   cursor: pointer;
+}
+.header .nav{
+  display: flex;
+  gap: 2rem;
+}
+.header .nav .nav-item{
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  color: var(--gray-300);
+  font-weight: var(--medium);
+  font-size: 1.5rem;
+}
+.header .nav .nav-item img{
+  height: 2.3rem;
 }
 @import url('./css/header.css');
